@@ -1,6 +1,14 @@
-def main():
-    print("Hello from moodmelody!")
+from flask import Flask
 
+app = Flask(__name__)
 
-if __name__ == "__main__":
-    main()
+@app.route('/')
+def home():
+    return "Helloo!!"
+
+@app.route('/about')
+def about():
+    return "This is the About Page!!"
+
+if __name__ == '__main__':
+    app.run(debug=True)
